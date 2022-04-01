@@ -1,0 +1,9 @@
+datasets/
+.idea/
+__pycache__/
+venv/
+models/
+predictions/
+runs/
+paths/
+imgui.ini

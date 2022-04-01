@@ -1,0 +1,45 @@
+<scene version="2.1.0">
+    <path value="../../../common"/>
+
+    <default name="spp" value="32"/>
+
+    <integrator type='moment'>
+        <integrator type="direct"/>
+    </integrator>
+
+    <sensor type="perspective">
+        <float name="fov" value="170"/>
+
+        <transform name="to_world">
+            <lookat origin="0, 0, 1" target="0, 0, 0" up="0, 1, 0"/>
+        </transform>
+
+        <sampler type="independent">
+            <integer name="sample_count" value="$spp"/>
+        </sampler>
+
+        <film type="hdrfilm">
+            <integer name="width" value="48"/>
+            <integer name="height" value="48"/>
+        </film>
+    </sensor>
+
+    <shape type="rectangle">
+        <bsdf type="diffuse">
+            <spectrum name="reflectance" value="1"/>
+        </bsdf>
+        <transform name="to_world">
+            <scale value="1000"/>
+        </transform>
+    </shape>
+
+    <emitter type="projector">
+        <float name="fov" value="165"/>
+
+        <transform name="to_world">
+            <lookat origin="0, 0, 1" target="0, 0, 0" up="0, 1, 0"/>
+        </transform>
+
+        <spectrum name="irradiance" value="1"/>
+    </emitter>
+</scene>

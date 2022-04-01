@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<scene version="2.2.1">
+   <integrator type="aov">
+        <string name="aovs" value="1emission:emission, 2normal:sh_normal, 3position:position, 4wi:wi, 5albedo:albedo, 6alpha:alpha" />
+		<integer name="samples_per_pass" value="20"/>
+    </integrator>
+    <sensor type="perspective">
+        <float name="fov" value="19.5" />
+        <transform name="to_world">
+            <matrix value="-1 0 1.50996e-007 -1.05697e-006 0 1 0 1 -1.50996e-007 0 -1 7 0 0 0 1" />
+        </transform>
+        <sampler type="independent">
+            <integer name="sample_count" value="20" />
+        </sampler>
+        <film type="hdrfilm">
+            <integer name="width" value="600" />
+            <integer name="height" value="600" />
+            <rfilter type="tent" />
+			<string name="component_format" value="float32"/>
+        </film>
+    </sensor>
+	<bsdf type="diffuse" id="var_LeftWall">
+		<rgb name="reflectance" value="1, 1, 1" />
+    </bsdf>
+    <bsdf type="diffuse" id="var_RightWall">
+		<rgb name="reflectance" value="1, 1, 1" />
+    </bsdf>
+    <bsdf type="twosided" id="Floor">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.725, 0.71, 0.68" />
+        </bsdf>
+    </bsdf>
+    <bsdf type="twosided" id="Ceiling">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.725, 0.71, 0.68" />
+        </bsdf>
+    </bsdf>
+    <bsdf type="twosided" id="BackWall">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0.725, 0.71, 0.68" />
+        </bsdf>
+    </bsdf>
+    <bsdf type="roughdielectric" id="var_sphere_mat">
+		<float name="alpha" value="0.01" />
+		<string name="distribution" value="ggx" />
+		<float name="int_ior" value="1.5" />
+		<float name="ext_ior" value="1" />
+		<integer name="num_parameters" value="1"/>
+		<vector4f name="min_bounds" value="0, 0, 0, 0.01"/>
+		<vector4f name="range_bounds" value="0, 0, 0, 0.5"/>
+    </bsdf>
+    <bsdf type="twosided" id="Light">
+        <bsdf type="diffuse">
+            <rgb name="reflectance" value="0, 0, 0" />
+        </bsdf>
+    </bsdf>
+    <shape type="shapegroup" id="walls_group">
+		<shape type="rectangle">
+			<transform name="to_world">
+				<matrix value="-4.37114e-008 1 4.37114e-008 0 0 -8.74228e-008 2 0 1 4.37114e-008 1.91069e-015 0 0 0 0 1" />
+			</transform>
+			<ref id="Floor" />
+		</shape>
+		<shape type="rectangle">
+			<transform name="to_world">
+				<matrix value="-1 -7.64274e-015 1.74846e-007 0 -8.74228e-008 8.74228e-008 -2 2 0 -1 -4.37114e-008 0 0 0 0 1" />
+			</transform>
+			<ref id="Ceiling" />
+		</shape>
+		<shape type="rectangle">
+			<transform name="to_world">
+				<matrix value="1.91069e-015 1 1.31134e-007 0 1 3.82137e-015 -8.74228e-008 1 -4.37114e-008 1.31134e-007 -2 -1 0 0 0 1" />
+			</transform>
+			<ref id="BackWall" />
+		</shape>
+		<shape type="rectangle">
+			<transform name="to_world">
+				<rotate x="1" angle="180"/>
+				<matrix value="4.37114e-008 0 2 1 1 3.82137e-015 -8.74228e-008 1 -3.82137e-015 1 -1.31134e-007 0 0 0 0 1" />
+			</transform>
+			<ref id="var_RightWall" />
+		</shape>
+		<shape type="rectangle">
+			<transform name="to_world">
+				<rotate x="1" angle="180"/>
+				<matrix value="-4.37114e-008 8.74228e-008 -2 -1 1 3.82137e-015 -8.74228e-008 1 0 -1 -4.37114e-008 0 0 0 0 1" />
+			</transform>
+			<ref id="var_LeftWall" />
+		</shape>
+	</shape>
+	<shape type="shapegroup" id="sphere_group">
+		<shape type="sphere">
+			<float name="radius" value="0.3" />
+			<point name="center" x="0" y="0" z="0" />
+			<ref id="var_sphere_mat" />
+		</shape>
+	</shape>
+	<shape type="instance" id="var_sphere">
+		<ref id="sphere_group"/>
+		<vector name="min_bounds" value="-0.6, 0.3, 0"/>
+		<vector name="range_bounds" value="1.2, 1.0, 0.3"/>
+	</shape>
+	<shape type="instance" id="walls">
+		<ref id="walls_group"/>
+		<vector name="min_bounds" value="-0.3, 0.3, 0"/> 
+		<vector name="range_bounds" value="0.6, 1.0, 0.3"/> 
+	</shape>
+   <shape type="shapegroup" id="light_group">
+		<shape type="rectangle">
+			<transform name="to_world">
+				<scale x="100" y="100"/>
+				<matrix value="-0.0025 -1.91069e-015 4.37114e-008 -0.005 -2.18557e-010 2.18557e-008 -0.5 1.98 0 -0.002 -8.74228e-011 -0.03 0 0 0 1" />
+			</transform>
+			<ref id="Light" />
+			<emitter type="area">
+				<rgb name="radiance" value="54, 38, 12" />
+			</emitter>
+		</shape>
+	</shape>
+	<shape type="instance" id="var_light">
+		<ref id="light_group"/>		
+		<vector name="min_bounds" value="-0.6, 0, 0"/>
+		<vector name="range_bounds" value="1.2, 0, 0.3"/>
+		<integer name="num_parameters" value="2"/>
+	</shape>
+</scene>
