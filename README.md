@@ -24,6 +24,8 @@ You are ready to go!
 
 ## Pretrained Models
 
+![Veach Interactive](https://gitlab.inria.fr/fungraph/active-exploration/uploads/db81a9619638d7046d5d9ff235d4ac5a/veach.png)
+
 The pretrained models are here: [Models](./models/)
 
 To interactively preview the neural rendering using the pretraine models run the `preview_widget_varying.py` script with the following arguments:
