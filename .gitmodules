@@ -32,8 +32,8 @@
 	path = ext/mitsuba2/ext/nanogui
 	url = https://github.com/mitsuba-renderer/nanogui
 [submodule "ext/mitsuba2/resources/data"]
-    path = ext/mitsuba2/resources/data
-    url = https://github.com/mitsuba-renderer/mitsuba-data
+	path = ext/mitsuba2/resources/data
+	url = https://github.com/mitsuba-renderer/mitsuba-data
 [submodule "ext/mitsuba2/ext/embree"]
 	path = ext/mitsuba2/ext/embree
 	url = https://github.com/wjakob/embree
