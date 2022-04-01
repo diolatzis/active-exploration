@@ -1,39 +1,39 @@
 [submodule "ext/mitsuba2/ext/tbb"]
-    path = ext/mitsuba2/ext/tbb
-    url = https://github.com/wjakob/tbb
+	path = ext/mitsuba2/ext/tbb
+	url = https://github.com/wjakob/tbb
 [submodule "ext/mitsuba2/ext/zlib"]
-    path = ext/mitsuba2/ext/zlib
-    url = https://github.com/mitsuba-renderer/zlib
+	path = ext/mitsuba2/ext/zlib
+	url = https://github.com/mitsuba-renderer/zlib
 [submodule "ext/mitsuba2/ext/libpng"]
-    path = ext/mitsuba2/ext/libpng
-    url = https://github.com/mitsuba-renderer/libpng.git
+	path = ext/mitsuba2/ext/libpng
+	url = https://github.com/mitsuba-renderer/libpng.git
 [submodule "ext/mitsuba2/ext/libjpeg"]
-    path = ext/mitsuba2/ext/libjpeg
-    url = https://github.com/mitsuba-renderer/libjpeg
+	path = ext/mitsuba2/ext/libjpeg
+	url = https://github.com/mitsuba-renderer/libjpeg
 [submodule "ext/mitsuba2/ext/openexr"]
-    path = ext/mitsuba2/ext/openexr
-    url = https://github.com/mitsuba-renderer/openexr
+	path = ext/mitsuba2/ext/openexr
+	url = https://github.com/mitsuba-renderer/openexr
 [submodule "ext/mitsuba2/ext/tinyformat"]
-    path = ext/mitsuba2/ext/tinyformat
-    url = https://github.com/mitsuba-renderer/tinyformat
+	path = ext/mitsuba2/ext/tinyformat
+	url = https://github.com/mitsuba-renderer/tinyformat
 [submodule "ext/mitsuba2/ext/pugixml"]
-    path = ext/mitsuba2/ext/pugixml
-    url = https://github.com/mitsuba-renderer/pugixml
+	path = ext/mitsuba2/ext/pugixml
+	url = https://github.com/mitsuba-renderer/pugixml
 [submodule "ext/mitsuba2/ext/asmjit"]
-    path = ext/mitsuba2/ext/asmjit
-    url = https://github.com/mitsuba-renderer/asmjit
+	path = ext/mitsuba2/ext/asmjit
+	url = https://github.com/mitsuba-renderer/asmjit
 [submodule "ext/mitsuba2/ext/pybind11"]
-    path = ext/mitsuba2/ext/pybind11
-    url = https://github.com/pybind/pybind11
+	path = ext/mitsuba2/ext/pybind11
+	url = https://github.com/pybind/pybind11
 [submodule "ext/mitsuba2/ext/enoki"]
-    path = ext/mitsuba2/ext/enoki
-    url = https://github.com/mitsuba-renderer/enoki
+	path = ext/mitsuba2/ext/enoki
+	url = https://github.com/mitsuba-renderer/enoki
 [submodule "ext/mitsuba2/ext/nanogui"]
-    path = ext/mitsuba2/ext/nanogui
-    url = https://github.com/mitsuba-renderer/nanogui
+	path = ext/mitsuba2/ext/nanogui
+	url = https://github.com/mitsuba-renderer/nanogui
 [submodule "ext/mitsuba2/resources/data"]
     path = ext/mitsuba2/resources/data
     url = https://github.com/mitsuba-renderer/mitsuba-data
 [submodule "ext/mitsuba2/ext/embree"]
-    path = ext/mitsuba2/ext/embree
-    url = https://github.com/wjakob/embree
+	path = ext/mitsuba2/ext/embree
+	url = https://github.com/wjakob/embree
